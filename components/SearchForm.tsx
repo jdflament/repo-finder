@@ -23,7 +23,7 @@ export function SearchForm({
    initialQuery = "",
    isLoading,
 }: SearchFormProps) {
-    const router = useRouter()
+    const router = useRouter();
     const searchParams = useSearchParams();
 
     const form = useForm<FormValues>({
@@ -34,11 +34,11 @@ export function SearchForm({
     })
 
     function onSubmit(data: FormValues) {
-        const params = new URLSearchParams(searchParams.toString())
-        params.set("q", data.query)
-        params.set("page", "1")
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("q", data.query);
+        params.set("page", "1");
 
-        router.push(`/?${params.toString()}`)
+        router.push(`/?${params.toString()}`);
     }
 
     return (
